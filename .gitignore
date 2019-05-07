@@ -3,6 +3,7 @@
 # Edit at https://www.gitignore.io/?templates=django
 
 node_modules/
+package.json
 
 ### Django ###
 *.log
