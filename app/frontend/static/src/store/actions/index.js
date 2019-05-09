@@ -7,6 +7,5 @@ export {
 } from './error';
 
 export {
-    toggleModal,
-    loading
+    toggleModal
 } from './utulity';

@@ -11,9 +11,23 @@ export class Leads extends PureComponent {
   render() {
     let error = null;
     if(this.props.error) {
+      console.log(this.props.error);
       error = []
       for(let key in this.props.error) {
-        error.push(<p key={key}>{key} : {this.props.error[key].join(' ')}</p>)
+        error.push(
+          <div key={key} class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>
+              {key.toUpperCase()} : 
+            </strong> 
+            {typeof this.props.error[key] === 'object' && this.props.error[key].constructor === Array ? 
+              this.props.error[key].join(' ') : 
+              this.props.error[key]
+              }
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        );
       }
     }
 

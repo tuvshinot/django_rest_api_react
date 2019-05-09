@@ -14,6 +14,11 @@ class Form extends Component {
     e.preventDefault();
     this.props.addLead(this.state);
     this.props.toggleModal()
+    this.setState({
+      name : '',
+      email : '',
+      message : ''
+    })
   };
 
   onChangeHandler = (e) => {
